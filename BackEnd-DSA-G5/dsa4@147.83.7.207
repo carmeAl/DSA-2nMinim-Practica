@@ -1,0 +1,59 @@
+CREATE TABLE Jugador(
+    idJugador int auto_increment primary key,
+    nombreJugador varchar(250) not null,
+    passwordJugador varchar(250) not null,
+    emailJugador varchar(250),
+    paisJugador varchar(250),
+    dinero double
+);
+CREATE TABLE Ingrediente(
+                            idIngrediente int auto_increment primary key,
+                            nombreIngrediente varchar(250) not null,
+                            nivelDesbloqueoIngrediente int,
+                            precioIngrediente double
+);
+CREATE TABLE Utensilio(
+                        idUtensilio int auto_increment primary key,
+                        nombreUtensilio varchar(250) not null,
+                        tiempoNivel1 int not null,
+                        tiempoNivel2 int not null,
+                        tiempoNivel3 int not null,
+                        precioUtensilio double not null
+);
+CREATE TABLE IngredientesComprados(
+                        idIngredienteComprado int f key,
+                        nombreUtensilio varchar(250) not null,
+                        tiempoNivel1 int not null,
+                        tiempoNivel2 int not null,
+                        tiempoNivel3 int not null,
+                        precioUtensilio double not null
+);
+CREATE TABLE IngredientesComprados(
+                                      idJugador int not null,
+                                      idIngrediente int not null
+);
+CREATE TABLE UtensiliosComprados(
+                                    idUtensilio int not null,
+                                    idJugador int not null,
+                                    nivelUtensilio int
+);
+
+
+INSERT INTO jugador(nombreJugador, passwordJugador, emailJugador, paisJugador) VALUE ('Juan','1111', 'juan@gmail.com', 'España', 100);
+INSERT INTO jugador(nombreJugador, passwordJugador, emailJugador, paisJugador) VALUE ('Victoria','2222', 'victoria@gmail.com', 'España', 100);
+INSERT INTO jugador(nombreJugador, passwordJugador, emailJugador, paisJugador) VALUE ('Maria','3333', 'maria@gmail.com', 'Francia', 100);
+
+INSERT INTO ingrediente (nombreIngrediente, nivelDesbloqueoIngrediente, precioIngrediente) VALUE ('Bacon',1,12);
+INSERT INTO ingrediente (nombreIngrediente, nivelDesbloqueoIngrediente, precioIngrediente) VALUE ('Hamburguesa',1,13);
+INSERT INTO ingrediente (nombreIngrediente, nivelDesbloqueoIngrediente, precioIngrediente) VALUE ('Lechuga',1,14);
+INSERT INTO ingrediente (nombreIngrediente, nivelDesbloqueoIngrediente, precioIngrediente) VALUE ('Tomate',1,15);
+
+INSERT INTO utensilio (nombreUtensilio, tiempoNivel1, tiempoNivel2, tiempoNivel3, precioUtensilio) VALUE ('Horno',15,10,5,100);
+INSERT INTO utensilio (nombreUtensilio, tiempoNivel1, tiempoNivel2, tiempoNivel3, precioUtensilio) VALUE ('Plancha',15,10,5,50);
+INSERT INTO utensilio (nombreUtensilio, tiempoNivel1, tiempoNivel2, tiempoNivel3, precioUtensilio) VALUE ('Plato',15,10,5,20);
+
+INSERT INTO IngredientesComprados (idIngrediente, idJugador) VALUE (1,1);
+INSERT INTO IngredientesComprados (idIngrediente, idJugador) VALUE (1,2);
+
+INSERT INTO UtensiliosComprados (idUtensilio,idJugador,nivelUtensilio) VALUE (1,1,1);
+INSERT INTO UtensiliosComprados (idUtensilio, idJugador,nivelUtensilio) VALUE (1,2,1);
