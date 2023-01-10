@@ -57,11 +57,8 @@ public class DenunciaActivity extends AppCompatActivity {
 
     public void buttonEnviar(View v){
         String fecha= new Date().toString();
-        System.out.println(fecha);
         String nombre = editTextNombreDen.getText().toString();
-        System.out.println(nombre);
         String comentario = editTextComentarioDen.getText().toString();
-        System.out.println(comentario);
 
         gitHub.postDenuncia(new Denuncia(fecha,nombre,comentario)).enqueue(new Callback<Void>() {
             @Override

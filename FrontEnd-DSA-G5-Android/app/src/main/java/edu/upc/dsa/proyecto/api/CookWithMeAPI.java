@@ -48,4 +48,7 @@ public interface CookWithMeAPI { //MyService
 
     @POST("/dsaApp/partidas/postDenuncia")
     Call<Void> postDenuncia(@Body Denuncia denuncia);
+
+    @PUT("/dsaApp/jugador/putJugador")
+    Call<Void> putJugador(@Body Jugador jugador);
 }
