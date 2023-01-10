@@ -1,6 +1,7 @@
 package edu.upc.dsa.services;
 import edu.upc.dsa.DAO.PartidasManager;
 import edu.upc.dsa.DAO.PartidasManagerImpl;
+import edu.upc.dsa.models.Denuncia;
 import edu.upc.dsa.models.Partida;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,6 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.Serializable;
 import java.util.List;
 
 @Api(value = "/partidas", description = "Endpoint to Partida Service")
@@ -99,6 +101,26 @@ public class PartidasService {
         //if (partida.getIdPartida()==null)  return Response.status(500).entity(partida).build();
         this.pm.addPartida(partida);
         return Response.status(201).entity(partida).build();
+    }
+
+    //Minimo2 EJ1
+    @POST
+    @ApiOperation(value = "Añadir Denuncia", notes = "Denuncia de un abuso")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful", response=Partida.class), //tot bé
+            @ApiResponse(code = 500, message = "Validation Error") //error de validació
+
+    })
+
+    @Path("/postDenuncia") //Minimo2 EJ1
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response postDenuncia(Denuncia denuncia) {
+
+        if (denuncia.getNombre()==null)  return Response.status(500).build();
+
+        System.out.println("POST /issue \n { \n fecha: "+denuncia.getFecha()+"\n nombre: "
+                +denuncia.getNombre()+"\n comentario: "+denuncia.getComentario()+"\n }");
+        return Response.status(201).build();
     }
 
 }
