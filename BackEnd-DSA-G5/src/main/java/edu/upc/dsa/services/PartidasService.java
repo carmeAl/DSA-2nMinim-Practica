@@ -112,7 +112,7 @@ public class PartidasService {
 
     })
 
-    @Path("/postDenuncia") //Minimo2 EJ1
+    @Path("/postDenuncia") //Minimo2 EJ1 commit
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postDenuncia(Denuncia denuncia) {
 
