@@ -138,4 +138,19 @@ public class JugadorService {
             return Response.status(201).entity(j).build();
         }
     }
+
+    @PUT
+    @ApiOperation(value = "update Pais Jugador", notes = "hola")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Successful"),
+            @ApiResponse(code = 404, message = "Jugador not found")
+    })
+    @Path("/putJugador")
+    public Response putJugador(Jugador jugador) {
+
+
+        if (jugador == null) return Response.status(404).build();
+        System.out.println(jugador.getPais());
+        return Response.status(201).build();
+    }
 }
