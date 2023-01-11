@@ -3,6 +3,8 @@ package edu.upc.dsa.proyecto;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,5 +30,10 @@ public class AyudaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ayuda);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void onClickTextFAQs (View v){
+        Intent FAQs= new Intent (AyudaActivity.this, FaqsActivity.class);
+        startActivity(FAQs);
     }
 }

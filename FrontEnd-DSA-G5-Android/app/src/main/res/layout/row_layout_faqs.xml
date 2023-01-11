@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="120dip"
+    android:padding="6dip" >
+
+
+    <TextView
+        android:id="@+id/nombreObjeto"
+        android:layout_width="186dp"
+        android:layout_height="37dp"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="135dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="84dp"
+        android:gravity="center_vertical"
+        android:text="Example application"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/precioObjeto"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="152dp"
+        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+</RelativeLayout>

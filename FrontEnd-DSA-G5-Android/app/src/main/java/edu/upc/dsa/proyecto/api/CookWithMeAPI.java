@@ -1,8 +1,10 @@
 package edu.upc.dsa.proyecto.api;
 
+import java.util.Hashtable;
 import java.util.List;
 
 import edu.upc.dsa.proyecto.models.Denuncia;
+import edu.upc.dsa.proyecto.models.FAQs;
 import edu.upc.dsa.proyecto.models.Ingrediente;
 import edu.upc.dsa.proyecto.models.IngredientesComprados;
 import edu.upc.dsa.proyecto.models.Jugador;
@@ -51,4 +53,7 @@ public interface CookWithMeAPI { //MyService
 
     @PUT("/dsaApp/jugador/putJugador")
     Call<Void> putJugador(@Body Jugador jugador);
+
+    @GET("/dsaApp/Minimo2Service/Minimo2Service")
+    Call<List<FAQs>> getAllFAQs();
 }

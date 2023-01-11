@@ -116,9 +116,9 @@
     <string name="ajustes">PERFIL</string>
     <string name="idioma">Idioma</string>
     <string name="seleccionar_idioma">Seleccionar Idioma</string>
-    <string name="str_en" >Ingles</string>
-    <string name="str_es" >Español</string>
-    <string-array name="languages" >
+    <string name="str_en">Ingles</string>
+    <string name="str_es">Español</string>
+    <string-array name="languages">
         <item>@string/str_en</item>
         <item>@string/str_es</item>
     </string-array>
